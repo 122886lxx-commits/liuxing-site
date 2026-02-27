@@ -5,6 +5,8 @@ interface ResearchSectionProps {
   lang: 'cn' | 'en';
 }
 
+const PAPER_URL = 'https://pdf.hanspub.org/orf20260100000_70845074.pdf';
+
 export function ResearchSection({ lang }: ResearchSectionProps) {
   const content = {
     cn: {
@@ -39,11 +41,13 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
       title: lang === 'cn' ? '基于二维元胞自动机的高质量伪随机数生成器设计' : 'Design of High-Quality PRNG Based on 2D Cellular Automata',
       venue: lang === 'cn' ? '硕士学位论文（进行中）' : 'Master\'s Thesis (In Progress)',
       year: '2025',
+      href: PAPER_URL,
     },
     {
       title: lang === 'cn' ? '四方邻域 CA 规则优化研究报告' : 'Four-neighbor CA Rule Optimization Research Report',
       venue: lang === 'cn' ? '课题组内部报告' : 'Internal Research Report',
       year: '2024',
+      href: PAPER_URL,
     },
   ];
 
@@ -68,6 +72,20 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
             <p className="text-muted-foreground leading-relaxed mb-8">
               {content[lang].description}
             </p>
+            <div className="flex flex-wrap gap-3 mb-8">
+              <Button asChild variant="hero" size="sm" className="gap-2">
+                <a href={PAPER_URL} target="_blank" rel="noreferrer">
+                  {lang === 'cn' ? '查看论文' : 'Open Paper'}
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button asChild variant="heroOutline" size="sm" className="gap-2">
+                <a href={PAPER_URL} target="_blank" rel="noreferrer">
+                  {lang === 'cn' ? '下载 PDF' : 'Download PDF'}
+                  <Download className="w-4 h-4" />
+                </a>
+              </Button>
+            </div>
 
             {/* Visual diagram */}
             <div className="mb-8">
@@ -109,8 +127,11 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
             </h4>
             <div className="space-y-4">
               {publications.map((pub, index) => (
-                <div
+                <a
                   key={index}
+                  href={pub.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center justify-between p-4 rounded-xl bg-secondary/30 border border-border/50 hover:border-primary/30 transition-colors group"
                 >
                   <div>
@@ -119,10 +140,10 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
                       {pub.venue} • {pub.year}
                     </p>
                   </div>
-                  <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                     <Download className="w-4 h-4" />
                   </Button>
-                </div>
+                </a>
               ))}
             </div>
           </div>

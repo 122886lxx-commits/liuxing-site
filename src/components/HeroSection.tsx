@@ -5,6 +5,8 @@ interface HeroSectionProps {
   lang: 'cn' | 'en';
 }
 
+const PAPER_URL = 'https://pdf.hanspub.org/orf20260100000_70845074.pdf';
+
 export function HeroSection({ lang }: HeroSectionProps) {
   const content = {
     cn: {
@@ -77,13 +79,26 @@ export function HeroSection({ lang }: HeroSectionProps) {
             {/* Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-[44rem]">
               {metrics.map((metric, index) => (
-                <div
-                  key={index}
-                  className="min-h-[144px] p-5 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm"
-                >
-                  <div className="text-2xl md:text-[2.2rem] font-bold text-primary font-mono mb-2">{metric.value}</div>
-                  <div className="text-sm text-muted-foreground leading-relaxed">{metric.label}</div>
-                </div>
+                index === 3 ? (
+                  <a
+                    key={index}
+                    href={PAPER_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="min-h-[144px] p-5 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm hover:border-primary/50 transition-colors"
+                  >
+                    <div className="text-2xl md:text-[2.2rem] font-bold text-primary font-mono mb-2">{metric.value}</div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">{metric.label}</div>
+                  </a>
+                ) : (
+                  <div
+                    key={index}
+                    className="min-h-[144px] p-5 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm"
+                  >
+                    <div className="text-2xl md:text-[2.2rem] font-bold text-primary font-mono mb-2">{metric.value}</div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">{metric.label}</div>
+                  </div>
+                )
               ))}
             </div>
           </div>
