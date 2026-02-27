@@ -15,7 +15,7 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
       thesisSubtitle: '四方邻域 CA 用于芯片测试 PRPG',
       description: '研究二维元胞自动机（2D CA）在伪随机数生成（PRNG）中的应用，特别是用于芯片内建自测试（BIST）中的伪随机模式生成器（PRPG）。通过优化 CA 规则和初始配置，生成满足 NIST SP 800-22 和 TestU01 测试套件的高质量随机数序列。',
       diagramTitle: '研究流程',
-      publicationsTitle: '论文 & 报告',
+      publicationsTitle: '论文',
       skillsTitle: '相关技能',
     },
     en: {
@@ -24,7 +24,7 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
       thesisSubtitle: 'Four-neighbor CA for Chip Test PRPG',
       description: 'Researching the application of 2D Cellular Automata (2D CA) in Pseudo-Random Number Generation (PRNG), specifically for Pseudo-Random Pattern Generators (PRPG) in chip Built-In Self-Test (BIST). By optimizing CA rules and initial configurations, we generate high-quality random sequences that pass NIST SP 800-22 and TestU01 test suites.',
       diagramTitle: 'Research Pipeline',
-      publicationsTitle: 'Publications & Reports',
+      publicationsTitle: 'Publication',
       skillsTitle: 'Related Skills',
     },
   };
@@ -41,12 +41,6 @@ export function ResearchSection({ lang }: ResearchSectionProps) {
       title: lang === 'cn' ? '基于二维元胞自动机的高质量伪随机数生成器设计' : 'Design of High-Quality PRNG Based on 2D Cellular Automata',
       venue: lang === 'cn' ? '硕士学位论文（进行中）' : 'Master\'s Thesis (In Progress)',
       year: '2025',
-      href: PAPER_URL,
-    },
-    {
-      title: lang === 'cn' ? '四方邻域 CA 规则优化研究报告' : 'Four-neighbor CA Rule Optimization Research Report',
-      venue: lang === 'cn' ? '课题组内部报告' : 'Internal Research Report',
-      year: '2024',
       href: PAPER_URL,
     },
   ];

@@ -66,13 +66,17 @@ export function HeroSection({ lang }: HeroSectionProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
-              <Button variant="hero" size="lg" className="gap-2">
-                {content[lang].cta1}
-                <ArrowRight className="w-4 h-4" />
+              <Button variant="hero" size="lg" className="gap-2" asChild>
+                <a href="#projects">
+                  {content[lang].cta1}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </Button>
-              <Button variant="heroOutline" size="lg" className="gap-2">
-                {content[lang].cta2}
-                <ExternalLink className="w-4 h-4" />
+              <Button variant="heroOutline" size="lg" className="gap-2" asChild>
+                <a href="#contact">
+                  {content[lang].cta2}
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </Button>
             </div>
 
