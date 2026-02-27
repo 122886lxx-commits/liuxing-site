@@ -17,12 +17,10 @@ export function WritingSection({ lang }: WritingSectionProps) {
   const content = {
     cn: {
       title: '公众号文章',
-      description: '根据你提供的文章列表整理。每篇文章都可以直接跳转到公众号原文。',
       articleLink: '阅读原文',
     },
     en: {
       title: 'WeChat Articles',
-      description: 'Curated from the article list you provided. Each card links to the original WeChat post.',
       articleLink: 'Read Article',
     },
   };
@@ -86,8 +84,7 @@ export function WritingSection({ lang }: WritingSectionProps) {
     <section id="writing" className="relative py-24 md:py-32">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{content[lang].title}</h2>
-          <p className="text-muted-foreground leading-relaxed">{content[lang].description}</p>
+          <h2 className="text-3xl md:text-4xl font-bold">{content[lang].title}</h2>
         </div>
 
         <div className="grid gap-6 max-w-5xl mx-auto">
