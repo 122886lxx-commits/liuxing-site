@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Download, Globe } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
@@ -84,10 +84,6 @@ export function Navigation({ lang, onLangChange }: NavigationProps) {
               <Globe className="w-4 h-4" />
               {lang === 'cn' ? 'EN' : '中文'}
             </Button>
-            <Button variant="hero" size="sm" className="gap-2">
-              <Download className="w-4 h-4" />
-              {lang === 'cn' ? '下载简历' : 'Resume'}
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -124,10 +120,6 @@ export function Navigation({ lang, onLangChange }: NavigationProps) {
               >
                 <Globe className="w-4 h-4" />
                 {lang === 'cn' ? 'Switch to English' : '切换到中文'}
-              </Button>
-              <Button variant="hero" size="sm" className="gap-2">
-                <Download className="w-4 h-4" />
-                {lang === 'cn' ? '下载简历' : 'Resume'}
               </Button>
             </div>
           </div>
