@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, Github, MessageSquare, Newspaper } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Github, MessageSquare, Newspaper, Radio } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface ProjectsSectionProps {
@@ -95,6 +95,26 @@ export function ProjectsSection({ lang }: ProjectsSectionProps) {
       tags: ['Python', 'RSS', 'Automation', 'AI Analysis', 'Notifications'],
       language: 'Python',
       color: 'from-primary/14 to-accent/8',
+    },
+    {
+      icon: Radio,
+      title: {
+        cn: 'hotel-live-script-demo',
+        en: 'hotel-live-script-demo',
+      },
+      repo: 'https://github.com/122886lxx-commits/hotel-live-script-demo',
+      repoLabel: '122886lxx-commits/hotel-live-script-demo',
+      summary: {
+        cn: '面向酒店直播场景的直播话术与销售型问答 Agent Demo，支持规则规划、LLM 改写和模板保底三层生成。',
+        en: 'A live-commerce script and sales-Q&A agent demo for hotel livestreaming, combining rule planning, LLM rewriting, and template fallback.',
+      },
+      explanation: {
+        cn: '这个项目体现了我对“可演示 agent”产品形态的理解：不是做开放域聊天，而是围绕直播转化场景，把问题路由、结构规划、风格输出和失败降级串成稳定可解释的生产链路。',
+        en: 'This project reflects my approach to productionizable agents: not open-domain chat, but a conversion-oriented live-commerce workflow that connects routing, structured planning, style control, and graceful fallback into a stable, explainable pipeline.',
+      },
+      tags: ['Python', 'Streamlit', 'Agent', 'LLM', 'Template Fallback', 'Live Commerce'],
+      language: 'Python',
+      color: 'from-accent/16 to-primary/8',
     },
   ];
 
